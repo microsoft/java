@@ -5,7 +5,7 @@
 # and are not intended to be used for any other purpose.
 
 FROM microsoft/windowsservercore:ltsc2016
-MAINTAINER Azure App Services Container Images <appsvc-images@microsoft.com>
+MAINTAINER Azure Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN setx PACKAGE zulu-7-azure-jdk_7.24.0.2-7.0.191-win_x64.msi
 RUN setx PACKAGE_DIR zulu-7/8u191
