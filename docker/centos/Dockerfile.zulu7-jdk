@@ -5,6 +5,7 @@
 # and are not intended to be used for any other purpose.
 
 FROM centos:latest
+MAINTAINER Azure App Services Container Images <appsvc-images@microsoft.com>
 
 RUN rpm --import http://repos.azul.com/azul-repo.key && \
     curl http://repos.azul.com/azure-only/zulu-azure.repo -o /etc/yum.repos.d/zulu-azure.repo && \
