@@ -5,6 +5,7 @@
 # and are not intended to be used for any other purpose.
 
 FROM debian:jessie
+MAINTAINER Azure App Services Container Images <appsvc-images@microsoft.com>
 
 RUN apt-get -q update
 RUN apt-get -y install gnupg software-properties-common
