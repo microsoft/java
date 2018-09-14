@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN ZULU_PACK=zulu-7-azure-jdk_7.24.0.2-7.0.191-linux_x64.tar.gz && \
+RUN ZULU_PACK=zulu-8-azure-jre_8.31.0.2-8.0.181-linux_x64.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
     BIN_DIR=/usr/bin && \
     MAN_DIR=/usr/share/man/man1 && \
@@ -19,7 +19,7 @@ RUN ZULU_PACK=zulu-7-azure-jdk_7.24.0.2-7.0.191-linux_x64.tar.gz && \
     apk update && \
     apk add --no-cache ca-certificates wget && \
     update-ca-certificates && \
-    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-7/7u191/$ZULU_PACK && \
+    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/$ZULU_PACK && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./$ZULU_PACK -C /usr/lib/jvm/ && rm -f $ZULU_PACK && \
     cd ${BIN_DIR} && \
