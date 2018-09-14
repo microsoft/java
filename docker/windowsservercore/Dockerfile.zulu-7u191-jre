@@ -7,7 +7,7 @@
 FROM microsoft/windowsservercore:ltsc2016
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-RUN setx PACKAGE zulu-7-azure-jdk_7.24.0.2-7.0.191-win_x64.msi
+RUN setx PACKAGE zulu-7-azure-jre_7.24.0.2-7.0.191-win_x64.msi
 RUN setx PACKAGE_DIR zulu-7/7u191
 RUN setx ZULU_DIR zulu/zulu-7
 RUN setx /m PATH "%PATH%;C:\Program Files\%ZULU_DIR%\bin"
