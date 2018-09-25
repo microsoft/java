@@ -1,5 +1,5 @@
 ## Tags
-	docker pull mcr.microsoft.com/java/jre-headless
++ `docker pull mcr.microsoft.com/java/jre-headless`
 
 Java 8 Update 181:
 + `8u181-zulu-alpine` - [Dockerfile][zulu8-jre-headless-alpine]
@@ -37,8 +37,8 @@ Java 7 Update 191:
 	and an installed version of the Azul Zulu Headless JRE (Java Runtime Environment).
 
 ## How To Use
-	docker pull mcr.microsoft.com/java/jre-headless:tag
-	docker run --rm -it mcr.microsoft.com/java/jre-headless:tag
++ `docker pull mcr.microsoft.com/java/jre-headless:tag`
++ `docker run --rm -it mcr.microsoft.com/java/jre-headless:tag`
 
 ## Featured Repositories
 * `https://repos.azul.com/azure-only/zulu/yum`

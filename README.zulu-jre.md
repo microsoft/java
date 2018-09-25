@@ -1,5 +1,5 @@
 ## Tags
-	docker pull mcr.microsoft.com/java/jre
++ `docker pull mcr.microsoft.com/java/jre`
         
 Java 8 Update 181:
 + `8u181-zulu-alpine` - [Dockerfile][zulu8-jre-alpine]
@@ -41,8 +41,8 @@ Java 7 Update 191:
 	and an installed version of the Azul Zulu Full JRE (Java Runtime Environment).
 
 ## How To Use
-	docker pull mcr.microsoft.com/java/jre:tag
-	docker run --rm -it mcr.microsoft.com/java/jre:tag
++ `docker pull mcr.microsoft.com/java/jre:tag`
++ `docker run --rm -it mcr.microsoft.com/java/jre:tag`
 
 ## Featured Repositories
 * `https://repos.azul.com/azure-only/zulu/yum`
