@@ -8,7 +8,7 @@ Azure or Azure Stack, and are not intended to be used for any other purpose.
 * Azul Zulu JRE Readme [(README.zulu-jre.md)][zulu-jre]
 * Azul Zulu Headless JRE Readme [(README.zulu-jre-headless.md)][zulu-jre-headless]
 
-[zulu-jdk]:https://github.com/Microsoft/java/README.zulu-jdk.md
+[zulu-jdk]:/README.zulu-jdk.md
 [zulu-jre]:https://github.com/Microsoft/java/README.zulu-jre.md
 [zulu-jre-headless]:https://github.com/Microsoft/java/README.zulu-jre-headless.md
 
