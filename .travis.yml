@@ -1,0 +1,54 @@
+language: minimal
+services: docker
+
+matrix:
+  include:
+    - os: linux
+      env: VERSION=8u181 OS=alpine
+    - os: linux
+      env: VERSION=8u181 OS=centos
+    - os: linux
+      env: VERSION=8u181 OS=debian8
+    - os: linux
+      env: VERSION=8u181 OS=debian9
+    - os: linux
+      env: VERSION=8u181 OS=ubuntu
+    - os: linux
+      env: VERSION=7u191 OS=alpine
+    - os: linux
+      env: VERSION=7u191 OS=centos
+    - os: linux
+      env: VERSION=7u191 OS=debian8
+    - os: linux
+      env: VERSION=7u191 OS=debian9
+    - os: linux
+      env: VERSION=7u191 OS=ubuntu
+
+install:
+  - git clone https://github.com/docker-library/official-images.git ~/official-images
+
+before_script:
+  - env | sort
+  - cd "docker/$OS"
+  - imageName="java"
+  - tagName="$VERSION-zulu-$OS"
+  - dockerfileSuffix="zulu-$VERSION"
+
+script:
+  - |
+    (
+      set -Eeuo pipefail
+      set -x
+      sed -i -e "s@openjdk@$imageName@g" ~/official-images/test/config.sh
+
+      # JDK
+      docker build -t "$imageName:$tagName-jdk" - < "Dockerfile.$dockerfileSuffix-jdk"
+      ~/official-images/test/run.sh "$imageName:$tagName-jdk"
+
+      # JRE
+      docker build -t "$imageName:$tagName-jre" - < "Dockerfile.$dockerfileSuffix-jre"
+      ~/official-images/test/run.sh "$imageName:$tagName-jre"
+    )
+
+after_script:
+  - docker images
