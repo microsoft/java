@@ -1,31 +1,80 @@
 ## Tags
 + `docker pull mcr.microsoft.com/java/jre-headless`
 
+Java 11 Update 2:
++ `11u2-zulu-alpine` - [Dockerfile][zulu-11u2-jre-hl-alpine]
++ `11u2-zulu-centos` - [Dockerfile][zulu-11u2-jre-hl-centos]
++ `11u2-zulu-debian8` - [Dockerfile][zulu-11u2-jre-hl-debian8]
++ `11u2-zulu-debian9` - [Dockerfile][zulu-11u2-jre-hl-debian9]
++ `11u2-zulu-ubuntu` - [Dockerfile][zulu-11u2-jre-hl-ubuntu]
++ `11u2-zulu-windowsservercore` - [Dockerfile][zulu-11u2-jre-hl-windowsservercore]
+
+Java 8 Update 192:
++ `8u192-zulu-alpine` - [Dockerfile][zulu-8u192-jre-hl-alpine]
++ `8u192-zulu-centos` - [Dockerfile][zulu-8u192-jre-hl-centos]
++ `8u192-zulu-debian8` - [Dockerfile][zulu-8u192-jre-hl-debian8]
++ `8u192-zulu-debian9` - [Dockerfile][zulu-8u192-jre-hl-debian9]
++ `8u192-zulu-ubuntu` - [Dockerfile][zulu-8u192-jre-hl-ubuntu]
++ `8u192-zulu-windowsservercore` - [Dockerfile][zulu-8u192-jre-hl-windowsservercore]
+
 Java 8 Update 181:
-+ `8u181-zulu-alpine` - [Dockerfile][zulu8-jre-headless-alpine]
-+ `8u181-zulu-centos` - [Dockerfile][zulu8-jre-headless-centos]
-+ `8u181-zulu-debian8` - [Dockerfile][zulu8-jre-headless-debian8]
-+ `8u181-zulu-debian9` - [Dockerfile][zulu8-jre-headless-debian9]
-+ `8u181-zulu-ubuntu` - [Dockerfile][zulu8-jre-headless-ubuntu]
- 
++ `8u181-zulu-alpine` - [Dockerfile][zulu-8u181-jre-hl-alpine]
++ `8u181-zulu-centos` - [Dockerfile][zulu-8u181-jre-hl-centos]
++ `8u181-zulu-debian8` - [Dockerfile][zulu-8u181-jre-hl-debian8]
++ `8u181-zulu-debian9` - [Dockerfile][zulu-8u181-jre-hl-debian9]
++ `8u181-zulu-ubuntu` - [Dockerfile][zulu-8u181-jre-hl-ubuntu]
++ `8u181-zulu-windowsservercore` - [Dockerfile][zulu-8u181-jre-hl-windowsservercore]
+
+Java 7 Update 201:
++ `7u201-zulu-alpine` - [Dockerfile][zulu-7u201-jre-hl-alpine]
++ `7u201-zulu-centos` - [Dockerfile][zulu-7u201-jre-hl-centos]
++ `7u201-zulu-debian8` - [Dockerfile][zulu-7u201-jre-hl-debian8]
++ `7u201-zulu-debian9` - [Dockerfile][zulu-7u201-jre-hl-debian9]
++ `7u201-zulu-ubuntu` - [Dockerfile][zulu-7u201-jre-hl-ubuntu]
++ `7u201-zulu-windowsservercore` - [Dockerfile][zulu-7u201-jre-hl-windowsservercore]
+
 Java 7 Update 191:
-+ `7u191-zulu-alpine` - [Dockerfile][zulu7-jre-headless-alpine]
-+ `7u191-zulu-centos` - [Dockerfile][zulu7-jre-headless-centos]
-+ `7u191-zulu-debian8` - [Dockerfile][zulu7-jre-headless-debian8]
-+ `7u191-zulu-debian9` - [Dockerfile][zulu7-jre-headless-debian9]
-+ `7u191-zulu-ubuntu` - [Dockerfile][zulu7-jre-headless-ubuntu]
++ `7u191-zulu-alpine` - [Dockerfile][zulu-7u191-jre-hl-alpine]
++ `7u191-zulu-centos` - [Dockerfile][zulu-7u191-jre-hl-centos]
++ `7u191-zulu-debian8` - [Dockerfile][zulu-7u191-jre-hl-debian8]
++ `7u191-zulu-debian9` - [Dockerfile][zulu-7u191-jre-hl-debian9]
++ `7u191-zulu-ubuntu` - [Dockerfile][zulu-7u191-jre-hl-ubuntu]
++ `7u191-zulu-windowsservercore` - [Dockerfile][zulu-7u191-jre-hl-windowsservercore]
 
-[zulu8-jre-headless-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-8u181-jre-headless
-[zulu8-jre-headless-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-8u181-jre-headless
-[zulu8-jre-headless-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-8u181-jre-headless
-[zulu8-jre-headless-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u181-jre-headless
-[zulu8-jre-headless-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-8u181-jre-headless
+[zulu-11u2-jre-hl-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-11u2-jre-headless
+[zulu-11u2-jre-hl-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-11u2-jre-headless
+[zulu-11u2-jre-hl-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-11u2-jre-headless
+[zulu-11u2-jre-hl-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-11u2-jre-headless
+[zulu-11u2-jre-hl-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-11u2-jre-headless
+[zulu-11u2-jre-hl-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-11u2-jre-headless
 
-[zulu7-jre-headless-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-7u191-jre-headless
-[zulu7-jre-headless-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-7u191-jre-headless
-[zulu7-jre-headless-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-7u191-jre-headless
-[zulu7-jre-headless-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-7u191-jre-headless
-[zulu7-jre-headless-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-7u191-jre-headless
+[zulu-8u192-jre-hl-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-8u192-jre-headless
+[zulu-8u192-jre-hl-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-8u192-jre-headless
+[zulu-8u192-jre-hl-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-8u192-jre-headless
+[zulu-8u192-jre-hl-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u192-jre-headless
+[zulu-8u192-jre-hl-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-8u192-jre-headless
+[zulu-8u192-jre-hl-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-8u192-jre-headless
+
+[zulu-8u181-jre-hl-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-8u181-jre-headless
+[zulu-8u181-jre-hl-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-8u181-jre-headless
+[zulu-8u181-jre-hl-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-8u181-jre-headless
+[zulu-8u181-jre-hl-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u181-jre-headless
+[zulu-8u181-jre-hl-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-8u181-jre-headless
+[zulu-8u181-jre-hl-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-8u181-jre-headless
+
+[zulu-7u201-jre-hl-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-7u201-jre-headless
+[zulu-7u201-jre-hl-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-7u201-jre-headless
+[zulu-7u201-jre-hl-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-7u201-jre-headless
+[zulu-7u201-jre-hl-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-7u201-jre-headless
+[zulu-7u201-jre-hl-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-7u201-jre-headless
+[zulu-7u201-jre-hl-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-7u201-jre-headless
+
+[zulu-7u191-jre-hl-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-7u191-jre-headless
+[zulu-7u191-jre-hl-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-7u191-jre-headless
+[zulu-7u191-jre-hl-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-7u191-jre-headless
+[zulu-7u191-jre-hl-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-7u191-jre-headless
+[zulu-7u191-jre-hl-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-7u191-jre-headless
+[zulu-7u191-jre-hl-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-7u191-jre-headless
 
 ## About
 	These Zulu OpenJDK Docker images and corresponding Dockerfiles are

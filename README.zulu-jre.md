@@ -1,35 +1,80 @@
 ## Tags
 + `docker pull mcr.microsoft.com/java/jre`
-        
+
+Java 11 Update 2:
++ `11u2-zulu-alpine` - [Dockerfile][zulu-11u2-jre-alpine]
++ `11u2-zulu-centos` - [Dockerfile][zulu-11u2-jre-centos]
++ `11u2-zulu-debian8` - [Dockerfile][zulu-11u2-jre-debian8]
++ `11u2-zulu-debian9` - [Dockerfile][zulu-11u2-jre-debian9]
++ `11u2-zulu-ubuntu` - [Dockerfile][zulu-11u2-jre-ubuntu]
++ `11u2-zulu-windowsservercore` - [Dockerfile][zulu-11u2-jre-windowsservercore]
+
+Java 8 Update 192:
++ `8u192-zulu-alpine` - [Dockerfile][zulu-8u192-jre-alpine]
++ `8u192-zulu-centos` - [Dockerfile][zulu-8u192-jre-centos]
++ `8u192-zulu-debian8` - [Dockerfile][zulu-8u192-jre-debian8]
++ `8u192-zulu-debian9` - [Dockerfile][zulu-8u192-jre-debian9]
++ `8u192-zulu-ubuntu` - [Dockerfile][zulu-8u192-jre-ubuntu]
++ `8u192-zulu-windowsservercore` - [Dockerfile][zulu-8u192-jre-windowsservercore]
+
 Java 8 Update 181:
-+ `8u181-zulu-alpine` - [Dockerfile][zulu8-jre-alpine]
-+ `8u181-zulu-centos` - [Dockerfile][zulu8-jre-centos]
-+ `8u181-zulu-debian8` - [Dockerfile][zulu8-jre-debian8]
-+ `8u181-zulu-debian9` - [Dockerfile][zulu8-jre-debian9]
-+ `8u181-zulu-ubuntu` - [Dockerfile][zulu8-jre-ubuntu]
-+ `8u181-zulu-windowsservercore` - [Dockerfile][zulu8-jre-windowsservercore]
++ `8u181-zulu-alpine` - [Dockerfile][zulu-8u181-jre-alpine]
++ `8u181-zulu-centos` - [Dockerfile][zulu-8u181-jre-centos]
++ `8u181-zulu-debian8` - [Dockerfile][zulu-8u181-jre-debian8]
++ `8u181-zulu-debian9` - [Dockerfile][zulu-8u181-jre-debian9]
++ `8u181-zulu-ubuntu` - [Dockerfile][zulu-8u181-jre-ubuntu]
++ `8u181-zulu-windowsservercore` - [Dockerfile][zulu-8u181-jre-windowsservercore]
+
+Java 7 Update 201:
++ `7u201-zulu-alpine` - [Dockerfile][zulu-7u201-jre-alpine]
++ `7u201-zulu-centos` - [Dockerfile][zulu-7u201-jre-centos]
++ `7u201-zulu-debian8` - [Dockerfile][zulu-7u201-jre-debian8]
++ `7u201-zulu-debian9` - [Dockerfile][zulu-7u201-jre-debian9]
++ `7u201-zulu-ubuntu` - [Dockerfile][zulu-7u201-jre-ubuntu]
++ `7u201-zulu-windowsservercore` - [Dockerfile][zulu-7u201-jre-windowsservercore]
 
 Java 7 Update 191:
-+ `7u191-zulu-alpine` - [Dockerfile][zulu7-jre-alpine]
-+ `7u191-zulu-centos` - [Dockerfile][zulu7-jre-centos]
-+ `7u191-zulu-debian8` - [Dockerfile][zulu7-jre-debian8]
-+ `7u191-zulu-debian9` - [Dockerfile][zulu7-jre-debian9]
-+ `7u191-zulu-ubuntu` - [Dockerfile][zulu7-jre-ubuntu]
-+ `7u191-zulu-windowsservercore` - [Dockerfile][zulu7-jre-windowsservercore]
++ `7u191-zulu-alpine` - [Dockerfile][zulu-7u191-jre-alpine]
++ `7u191-zulu-centos` - [Dockerfile][zulu-7u191-jre-centos]
++ `7u191-zulu-debian8` - [Dockerfile][zulu-7u191-jre-debian8]
++ `7u191-zulu-debian9` - [Dockerfile][zulu-7u191-jre-debian9]
++ `7u191-zulu-ubuntu` - [Dockerfile][zulu-7u191-jre-ubuntu]
++ `7u191-zulu-windowsservercore` - [Dockerfile][zulu-7u191-jre-windowsservercore]
 
-[zulu8-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-8u181-jre
-[zulu8-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-8u181-jre
-[zulu8-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-8u181-jre
-[zulu8-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u181-jre
-[zulu8-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-8u181-jre
-[zulu8-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-8u181-jre
+[zulu-11u2-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-11u2-jre
+[zulu-11u2-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-11u2-jre
+[zulu-11u2-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-11u2-jre
+[zulu-11u2-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-11u2-jre
+[zulu-11u2-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-11u2-jre
+[zulu-11u2-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-11u2-jre
 
-[zulu7-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-7u191-jre
-[zulu7-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-7u191-jre
-[zulu7-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-7u191-jre
-[zulu7-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-7u191-jre
-[zulu7-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-7u191-jre
-[zulu7-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-7u191-jre
+[zulu-8u192-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-8u192-jre
+[zulu-8u192-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-8u192-jre
+[zulu-8u192-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-8u192-jre
+[zulu-8u192-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u192-jre
+[zulu-8u192-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-8u192-jre
+[zulu-8u192-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-8u192-jre
+
+[zulu-8u181-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-8u181-jre
+[zulu-8u181-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-8u181-jre
+[zulu-8u181-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-8u181-jre
+[zulu-8u181-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u181-jre
+[zulu-8u181-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-8u181-jre
+[zulu-8u181-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-8u181-jre
+
+[zulu-7u201-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-7u201-jre
+[zulu-7u201-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-7u201-jre
+[zulu-7u201-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-7u201-jre
+[zulu-7u201-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-7u201-jre
+[zulu-7u201-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-7u201-jre
+[zulu-7u201-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-7u201-jre
+
+[zulu-7u191-jre-alpine]:https://github.com/Microsoft/java/tree/master/docker/alpine/Dockerfile.zulu-7u191-jre
+[zulu-7u191-jre-centos]:https://github.com/Microsoft/java/tree/master/docker/centos/Dockerfile.zulu-7u191-jre
+[zulu-7u191-jre-debian8]:https://github.com/Microsoft/java/tree/master/docker/debian8/Dockerfile.zulu-7u191-jre
+[zulu-7u191-jre-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-7u191-jre
+[zulu-7u191-jre-ubuntu]:https://github.com/Microsoft/java/tree/master/docker/ubuntu/Dockerfile.zulu-7u191-jre
+[zulu-7u191-jre-windowsservercore]:https://github.com/Microsoft/java/tree/master/docker/windowsservercore/Dockerfile.zulu-7u191-jre
 
 ## About
 	These Zulu OpenJDK Docker images and corresponding Dockerfiles are
