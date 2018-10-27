@@ -5,7 +5,7 @@
 # and are not intended to be used for any other purpose.
 
 FROM microsoft/windowsservercore:ltsc2016
-MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+LABEL maintainer="Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>"
 
 RUN setx PACKAGE zulu-8-azure-jdk_8.31.0.2-8.0.181-win_x64.msi
 RUN setx PACKAGE_DIR zulu-8/8u181
