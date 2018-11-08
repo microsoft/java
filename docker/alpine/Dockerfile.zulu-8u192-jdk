@@ -16,7 +16,7 @@ RUN ZULU_PACK=zulu-8-azure-jdk_8.33.0.1-8.0.192-linux_musl_x64.tar.gz && \
     BIN_DIR=/usr/bin && \
     MAN_DIR=/usr/share/man/man1 && \
     ZULU_DIR=$( basename ${ZULU_PACK} .tar.gz ) && \
-    apk --no-cache add ca-certificates wget && \
+    apk --no-cache add binutils ca-certificates libgcc libstdc++ ttf-dejavu wget && \
     wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-8/8u192/$ZULU_PACK && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
