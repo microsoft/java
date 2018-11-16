@@ -4,7 +4,7 @@
 Java 8 Update 192:
 + `8u192-zulu-debian9` - [Dockerfile][zulu-8u192-jdk-debian9]
 
-[zulu-8u192-jdk-debian9]:https://github.com/Microsoft/java/tree/master/docker/debian9/Dockerfile.zulu-8u192-jdk-maven
+[zulu-8u192-jdk-debian9]:https://github.com/Microsoft/java/tree/master/docker/maven/Dockerfile.zulu-8u192-jdk-maven
 
 ## About
 	These Zulu OpenJDK Docker images and corresponding Dockerfiles are
