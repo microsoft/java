@@ -9,11 +9,6 @@ Azure or Azure Stack, and are not intended to be used for any other purpose.
 + [Azul Zulu Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
 + [Azul Zulu JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
 
-[zulu-jdk]:/README.zulu-jdk.md
-[zulu-jre]:/README.zulu-jre.md
-[zulu-jre-headless]:/README.zulu-jre-headless.md
-[zulu-maven]:/README.zulu-maven.md
-
 # Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
