@@ -9,7 +9,7 @@ MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN setx PACKAGE zulu-11-azure-jre_11.29.3-11.0.2-win_x64.msi
 RUN setx PACKAGE_DIR zulu-11/11.0.2
-RUN setx ZULU_DIR zulu/zulu-11
+RUN setx ZULU_DIR zulu\zulu-11-jre
 RUN setx /m PATH "%PATH%;C:\Program Files\%ZULU_DIR%\bin"
 
 RUN powershell -Command (new-object System.Net.WebClient).DownloadFile('http://repos.azul.com/azure-only/zulu/packages/%PACKAGE_DIR%/%PACKAGE%', 'C:\%PACKAGE%')
