@@ -14,3 +14,5 @@ RUN apt-get -q update && \
     apt-get -q update && \
     apt-get -y --no-install-recommends install zulu-11-azure-jre=11.29+3 && \
     rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/zre-11-azure-amd64
