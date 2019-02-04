@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN ZULU_PACK=zulu-8-azure-jre-headless_11.29.3-11.0.2-linux_musl_x64.tar.gz && \
+RUN ZULU_PACK=zulu-11-azure-jre-headless_11.29.3-11.0.2-linux_musl_x64.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
     BIN_DIR=/usr/bin && \
     MAN_DIR=/usr/share/man/man1 && \
@@ -25,3 +25,5 @@ RUN ZULU_PACK=zulu-8-azure-jre-headless_11.29.3-11.0.2-linux_musl_x64.tar.gz && 
     mkdir -p ${MAN_DIR} && \
     cd ${MAN_DIR} && \
     find ${INSTALL_DIR}/${ZULU_DIR}/man/man1 -type f -name "*.1" -exec ln -s {} . \;
+
+ENV JAVA_HOME=/usr/lib/jvm/zulu-11-azure-jre-headless_11.29.3-11.0.2-linux_musl_x64
