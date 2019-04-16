@@ -7,7 +7,7 @@
 FROM microsoft/windowsservercore:ltsc2016
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-RUN setx PACKAGE zulu-11-azure-jdk_11.31.1-11.0.3-win_x64.msi && \
+RUN setx PACKAGE zulu-11-azure-jdk_11.31.11-11.0.3-win_x64.msi && \
     setx PACKAGE_DIR zulu-11/11.0.3 && \
     setx /m JAVA_HOME "C:\Program Files\zulu\zulu-11"
 
