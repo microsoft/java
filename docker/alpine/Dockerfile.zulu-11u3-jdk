@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN ZULU_PACK=zulu-11-azure-jdk_11.31.1-11.0.3-linux_musl_x64.tar.gz && \
+RUN ZULU_PACK=zulu-11-azure-jdk_11.31.11-11.0.3-linux_musl_x64.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
     BIN_DIR=/usr/bin && \
     MAN_DIR=/usr/share/man/man1 && \

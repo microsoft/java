@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/java/jdk:11u2-zulu-alpine AS stage2
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 ARG INSTALL_DIR=/usr/lib/jvm
-ARG JDK_DIR=${INSTALL_DIR}/zulu-11-azure-jdk_11.31.1-11.0.3-linux_musl_x64
+ARG JDK_DIR=${INSTALL_DIR}/zulu-11-azure-jdk_11.31.11-11.0.3-linux_musl_x64
 ARG JRE_DIR=${INSTALL_DIR}/zulu-11-azure-jre-headless_11.31.1-11.0.3-linux_musl_x64
 COPY --from=stage1 ${JRE_DIR} ${INSTALL_DIR}
 
