@@ -14,7 +14,5 @@ COPY --from=stage1 ${JDK_DIR}/bin/jmap ${JRE_DIR}/bin
 COPY --from=stage1 ${JDK_DIR}/bin/jstack ${JRE_DIR}/bin
 COPY --from=stage1 ${JDK_DIR}/lib/tools.jar ${JRE_DIR}/lib
 COPY --from=stage1 ${JDK_DIR}/jre/lib/amd64/libattach.so ${JRE_DIR}/lib/amd64
-RUN apk --no-cache add ca-certificates ttf-dejavu && \
-    cd /usr/bin && find ${JRE_DIR}/bin -type f -perm -a=x -exec ln -s {} . \;
 
 ENV JAVA_HOME=${JRE_DIR}

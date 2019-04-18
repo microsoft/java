@@ -23,7 +23,7 @@ FROM alpine
 ARG JRE_TOOLS_DIR=/usr/lib/jvm/zulu-11-azure-jre-headless-tools_11.31.11-11.0.3-linux_musl_x64
 COPY --from=stage2 ${JRE_TOOLS_DIR} ${JRE_TOOLS_DIR}
 
-RUN apk --no-cache add ca-certificates ttf-dejavu && \
+RUN apk --no-cache add ca-certificates libgcc libstdc++ ttf-dejavu && \
     cd /usr/bin && find ${JRE_TOOLS_DIR}/bin -type f -perm -a=x -exec ln -s {} . \;
 
 #    MAN_DIR=/usr/share/man/man1 && \
