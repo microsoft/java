@@ -6,9 +6,9 @@
 FROM mcr.microsoft.com/java/jdk:8u232-zulu-debian9
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
  
-ARG MAVEN_VERSION=3.6.0
+ARG MAVEN_VERSION=3.6.2
 ARG USER_HOME_DIR="/root"
-ARG SHA=fae9c12b570c3ba18116a4e26ea524b29f7279c17cbaadc3326ca72927368924d9131d11b9e851b8dc9162228b6fdea955446be41207a5cfc61283dd8a561d2f
+ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
  
 RUN apt-get -q update && \
@@ -24,8 +24,8 @@ RUN apt-get -q update && \
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
  
-COPY July/debian9/maven/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh
-COPY July/debian9/maven/settings-docker.xml /usr/share/maven/ref/
+COPY October/debian9/maven/mvn-entrypoint.sh /usr/local/bin/mvn-entrypoint.sh
+COPY October/debian9/maven/settings-docker.xml /usr/share/maven/ref/
  
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 CMD ["mvn"]
