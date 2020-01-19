@@ -3,11 +3,11 @@ These Zulu OpenJDK Dockerfiles are to be used solely with Java applications
 or Java application components that are being developed for deployment on Microsoft
 Azure or Azure Stack, and are not intended to be used for any other purpose.
 
-## Further Information On Docker Hub
-+ [Azul Zulu JDK](https://hub.docker.com/_/microsoft-java-jdk)
-+ [Azul Zulu JRE](https://hub.docker.com/_/microsoft-java-jre)
-+ [Azul Zulu Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
-+ [Azul Zulu JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
+## Further Information
++ See [Azul Zulu JDK](https://hub.docker.com/_/microsoft-java-jdk) on Docker Hub for more information.
++ See [Azul Zulu JRE](https://hub.docker.com/_/microsoft-java-jre) on Docker Hub for more information
++ See [Azul Zulu Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless) on Docker Hub for more information.
++ See [Azul Zulu JDK And Maven](https://hub.docker.com/_/microsoft-java-maven) on Docker Hub for more information.
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
