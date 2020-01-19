@@ -9,7 +9,7 @@ and an installed version of the Azul Zulu JDK (Java Development Kit).
 
 ## How To Use
 docker pull mcr.microsoft.com/java/jdk:tag<br>
-docker run --rm -it mcr.microsoft.com/java/jdk:tag`
+docker run --rm -it mcr.microsoft.com/java/jdk:tag
 
 ## Further Information On Docker Hub
 * [Azul Zulu JDK](https://hub.docker.com/_/microsoft-java-jdk)
