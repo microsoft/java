@@ -4,10 +4,10 @@ or Java application components that are being developed for deployment on Micros
 Azure or Azure Stack, and are not intended to be used for any other purpose.
 
 ## Further Information
-+ See [Azul Zulu JDK](https://hub.docker.com/_/microsoft-java-jdk) on Docker Hub for more information.
-+ See [Azul Zulu JRE](https://hub.docker.com/_/microsoft-java-jre) on Docker Hub for more information
-+ See [Azul Zulu Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless) on Docker Hub for more information.
-+ See [Azul Zulu JDK And Maven](https://hub.docker.com/_/microsoft-java-maven) on Docker Hub for more information.
++ See [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk) on Docker Hub for more information.
++ See [Java SE JRE](https://hub.docker.com/_/microsoft-java-jre) on Docker Hub for more information
++ See [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless) on Docker Hub for more information.
++ See [Java SE JDK And Maven](https://hub.docker.com/_/microsoft-java-maven) on Docker Hub for more information.
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
