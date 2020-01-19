@@ -11,8 +11,8 @@ and an installed version of the Azul Zulu JDK (Java Development Kit).
 docker pull mcr.microsoft.com/java/jdk:tag<br>
 docker run --rm -it mcr.microsoft.com/java/jdk:tag`
 
-## Further Information
-* [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)
+## Further Information On Docker Hub
+* [Azul Zulu JDK](https://hub.docker.com/_/microsoft-java-jdk)
 
 ## Featured Repos
 * `https://repos.azul.com/azure-only/zulu/yum`
