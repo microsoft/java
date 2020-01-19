@@ -12,11 +12,11 @@ docker pull mcr.microsoft.com/java/jdk:tag<br>
 docker run --rm -it mcr.microsoft.com/java/jdk:tag`
 
 ## Further Information
-* [java/jdk](https://hub.docker.com/_/microsoft-java-jdk): Java SE JDK
+* [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)
 
 ## Featured Repos
 * `https://repos.azul.com/azure-only/zulu/yum`
-https://repos.azul.com/azure-only/zulu/apt
+* `https://repos.azul.com/azure-only/zulu/apt`
 
 ## Quick Reference
 * [Azul Zulu JVM for Azure FAQ](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf)
