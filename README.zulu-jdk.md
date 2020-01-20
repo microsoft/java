@@ -15,8 +15,8 @@ See [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk) on Docker Hub for
 * `https://repos.azul.com/azure-only/zulu/apt`
 
 ## Quick Reference
-* [Azul Zulu JVM for Azure FAQ](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf)
-* [Azul Zulu JVM for Azure](https://www.azul.com/downloads/azure-only/zulu/)
+* [Azul Zulu for Azure - Enterprise Edition FAQ](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf)
+* [Azul Zulu for Azure - Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/)
 
 ## Support
 For support or general questions [Microsoft Azure Support](https://support.microsoft.com/en-us/help/4026305/sql-contact-microsoft-azure-support)
