@@ -11,7 +11,7 @@ docker run --rm -it mcr.microsoft.com/java/jdk:tag
 See [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk) on Docker Hub for more information.
 
 ## Featured Repos
-https://<i></i>repos.azul.com/azure-only/zulu/yum
+https://<i></i>repos.azul.com/azure-only/zulu/yum<br>
 https://<i></i>repos.azul.com/azure-only/zulu/apt
 
 ## Quick Reference
