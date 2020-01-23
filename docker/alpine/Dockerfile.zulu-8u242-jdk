@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-ARG ZULU_DIR=zulu-8-azure-jdk_8.44.0.9-8.0.242-linux_musl_x64
+ARG ZULU_DIR=zulu-8-azure-jdk_8.44.0.11-8.0.242-linux_musl_x64
 
 RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
