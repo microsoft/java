@@ -4,7 +4,7 @@
 # that are being developed for deployment on Microsoft Azure or Azure Stack,
 # and are not intended to be used for any other purpose.
 
-FROM ubuntu:bionic
+FROM ubuntu:eoan
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN apt-get -q update && \
@@ -12,6 +12,7 @@ RUN apt-get -q update && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x219BD9C9 && \
     apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main" && \
     apt-get -q update && \
+    apt-get -y dist-upgrade && \
     apt-get -y --no-install-recommends install zulu-8-azure-jdk=8.42.0.23 && \
     rm -rf /var/lib/apt/lists/*
 
