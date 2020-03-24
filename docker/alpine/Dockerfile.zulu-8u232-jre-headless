@@ -18,6 +18,8 @@ RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
     BIN_DIR=/usr/bin && \
     MAN_DIR=/usr/share/man/man1 && \
     apk --no-cache add ca-certificates libgcc libstdc++ ttf-dejavu wget && \
+    apk update && \
+    apk upgrade && \
     wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-8/8u232/$ZULU_PACK && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
