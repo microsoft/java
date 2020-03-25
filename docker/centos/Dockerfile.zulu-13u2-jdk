@@ -10,6 +10,7 @@ MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 RUN rpm --import http://repos.azul.com/azul-repo.key && \
     curl http://repos.azul.com/azure-only/zulu-azure.repo -o /etc/yum.repos.d/zulu-azure.repo && \
     yum -q -y update && \
+    yum -q -y upgrade && \
     yum -q -y install zulu-13-azure-jdk-13.29+9
 
 ENV JAVA_HOME=/usr/lib/jvm/zulu-13-azure
