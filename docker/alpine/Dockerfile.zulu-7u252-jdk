@@ -13,7 +13,9 @@ ENV LC_ALL en_US.UTF-8
 
 ARG ZULU_DIR=zulu-7-azure-jdk_7.36.0.5-7.0.252-linux_x64
 
-RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
+RUN GCC_LIBS_PACK=gcc-libs-9.2.0-4-x86_64.pkg.tar.xz && \
+    ZLIB_PACK=zlib-1:1.2.11-4-x86_64.pkg.tar.xz && \
+    ZULU_PACK=${ZULU_DIR}.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
     BIN_DIR=/usr/bin && \
     MAN_DIR=/usr/share/man/man1 && \
@@ -21,17 +23,17 @@ RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
     wget -q https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk && \
     apk add glibc-2.28-r0.apk && rm glibc-2.28-r0.apk && \
-    wget -q -O gcc-libs.tar.xz https://www.archlinux.org/packages/core/x86_64/gcc-libs/download/ && \
-    wget -q -O zlib.tar.xz https://www.archlinux.org/packages/core/x86_64/zlib/download/ && \
-    tar -xJf gcc-libs.tar.xz -C /tmp && \
-    tar -xJf zlib.tar.xz -C /tmp && \
+    wget -q https://archive.archlinux.org/packages/g/gcc-libs/$GCC_LIBS_PACK && \
+    wget -q https://archive.archlinux.org/packages/z/zlib/$ZLIB_PACK && \
+    tar -Jxf ${GCC_LIBS_PACK} -C /tmp && \
+    tar -Jxf ${ZLIB_PACK} -C /tmp && \
     mv /tmp/usr/lib/libgcc_s.so* /tmp/usr/lib/libstdc++.so* /tmp/usr/lib/libz.so* /usr/glibc-compat/lib/ && \
     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so.* && \
-    rm -rf gcc-libs.tar.xz zlib.tar.xz /tmp/usr && \
+    rm -rf {GCC_LIBS_PACK} ${ZLIB_PACK} /tmp/usr && \
     apk update && \
     apk upgrade && \
     wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-7/7u252/$ZULU_PACK && \
-    rm /root/.wget -q-hsts && \
+    rm /root/.wget-hsts && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
     cd ${BIN_DIR} && \
