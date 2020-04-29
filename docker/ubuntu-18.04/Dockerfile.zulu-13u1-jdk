@@ -4,7 +4,7 @@
 # that are being developed for deployment on Microsoft Azure or Azure Stack,
 # and are not intended to be used for any other purpose.
 
-FROM ubuntu:focal
+FROM ubuntu:bionic
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN apt-get -qq update && \
@@ -13,7 +13,7 @@ RUN apt-get -qq update && \
     apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main" && \
     apt-get -qq update && \
     apt-get -qq -y dist-upgrade && \
-    apt-get -qq -y --no-install-recommends install zulu-7-azure-jre=7.34.0.5 && \
+    apt-get -qq -y --no-install-recommends install zulu-13-azure-jdk=13.28+11 && \
     rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_HOME=/usr/lib/jvm/zre-7-azure-amd64
+ENV JAVA_HOME=/usr/lib/jvm/zulu-13-azure-amd64
