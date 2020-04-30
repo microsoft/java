@@ -13,4 +13,4 @@ RUN rpm --import http://repos.azul.com/azul-repo.key && \
     yum -q -y upgrade && \
     yum -q -y install zulu-13-azure-jre-13.29+9
 
-ENV JAVA_HOME=/usr/lib/jvm/jre-13-azure
+ENV JAVA_HOME=/usr/lib/jvm/zre-13-azure
