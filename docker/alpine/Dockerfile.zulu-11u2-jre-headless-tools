@@ -9,7 +9,7 @@ MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN ZULU_PACK=zulu-11-azure-jre-headless_11.29.3-11.0.2-linux_musl_x64.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
-    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.2/$ZULU_PACK && \
+    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.2/${ZULU_PACK} && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
     JDK_DIR=${INSTALL_DIR}/zulu-11-azure-jdk_11.29.3-11.0.2-linux_musl_x64 && \

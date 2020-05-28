@@ -27,7 +27,7 @@ RUN ZULU_PACK=zulu-8-azure-jre_8.31.0.2-8.0.181-linux_x64.tar.gz && \
     mv /tmp/usr/lib/libgcc_s.so* /tmp/usr/lib/libstdc++.so* /tmp/usr/lib/libz.so* /usr/glibc-compat/lib/ && \
     strip /usr/glibc-compat/lib/libgcc_s.so.* /usr/glibc-compat/lib/libstdc++.so.* && \
     rm -rf gcc-libs.tar.xz zlib.tar.xz /tmp/usr && \
-    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/$ZULU_PACK && \
+    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-8/8u181/${ZULU_PACK} && \
     rm /root/.wget-hsts && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \

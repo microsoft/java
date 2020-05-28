@@ -32,7 +32,7 @@ RUN GCC_LIBS_PACK=gcc-libs-9.2.0-3-x86_64.pkg.tar.xz && \
     rm -rf {GCC_LIBS_PACK} ${ZLIB_PACK} /tmp/usr && \
     apk update && \
     apk upgrade && \
-    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-7/7u242/$ZULU_PACK && \
+    wget -q http://repos.azul.com/azure-only/zulu/packages/zulu-7/7u242/${ZULU_PACK} && \
     rm /root/.wget-hsts && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
