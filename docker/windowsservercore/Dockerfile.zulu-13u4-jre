@@ -9,7 +9,7 @@ MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN setx PACKAGE zulu-13-azure-jre_13.33.25-13.0.4-win_x64.msi && \
     setx PACKAGE_DIR zulu-13/13.0.4 && \
-    setx /m JAVA_HOME "C:\Program Files\zulu\zulu-13"
+    setx /m JAVA_HOME "C:\Program Files\Zulu\zulu-13-jre"
 
 RUN powershell -Command (new-object System.Net.WebClient).DownloadFile('http://repos.azul.com/azure-only/zulu/packages/%PACKAGE_DIR%/%PACKAGE%', 'C:\%PACKAGE%')
 RUN msiexec /quiet /i C:\%PACKAGE% && \
