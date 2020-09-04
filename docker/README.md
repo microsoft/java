@@ -7,16 +7,6 @@ These Zulu OpenJDK for Azure Docker images and corresponding Dockerfiles are to 
 * [Azul Zulu Headless JRE README](/README.zulu-jre-headless.md)
 * [Azul Zulu JDK and Maven README](/README.zulu-maven.md)
 
-* Azul Zulu JDK Readme [(README.zulu-jdk.md)][zulu-jdk]
-* Azul Zulu JRE Readme [(README.zulu-jre.md)][zulu-jre]
-* Azul Zulu Headless JRE Readme [(README.zulu-jre-headless.md)][zulu-jre-headless]
-* Azul Zulu JDK And Maven Readme [(README.zulu-maven.md)][zulu-maven]
-
-[zulu-jdk]:/README.zulu-jdk.md
-[zulu-jre]:/README.zulu-jre.md
-[zulu-jre-headless]:/README.zulu-jre-headless.md
-[zulu-maven]:/README.zulu-maven.md
-
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
