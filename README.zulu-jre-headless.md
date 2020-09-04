@@ -1,14 +1,12 @@
 ## About
-These Zulu OpenJDK Dockerfiles are to be used solely with Java applications
-or Java application components that are being developed for deployment on Microsoft
-Azure or Azure Stack, and are not intended to be used for any other purpose.
+These Zulu OpenJDK for Azure Docker images and corresponding Dockerfiles are to be used solely with Java applications or Java application components that are being developed for deployment on Microsoft Azure, Azure Functions (anywhere), Azure Stack, or Microsoft SQL Server and are not intended to be used for any other purpose.
 
 ## How To Use
 docker pull mcr.microsoft.com/java/jre-headless:tag<br>
 docker run --rm -it mcr.microsoft.com/java/jre-headless:tag
 
 ## Further Information
-See [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless) on Docker Hub for more information.
+[Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
 
 ## Featured Repos
 https://<span></span>repos.azul.com/azure-only/zulu/yum<br>
