@@ -6,7 +6,7 @@ docker pull mcr.microsoft.com/java/jre-headless:tag<br>
 docker run --rm -it mcr.microsoft.com/java/jre-headless:tag
 
 ## Further Information
-[Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
+* [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
 
 ## Featured Repos
 https://<span></span>repos.azul.com/azure-only/zulu/yum<br>

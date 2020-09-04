@@ -6,7 +6,7 @@ docker pull mcr.microsoft.com/java/jre:tag<br>
 docker run --rm -it mcr.microsoft.com/java/jre:tag
 
 ## Further Information
-[Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)
+* [Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)
 
 ## Featured Repos
 https://<span></span>repos.azul.com/azure-only/zulu/yum<br>

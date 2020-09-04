@@ -2,12 +2,12 @@
 These Zulu OpenJDK for Azure Docker images and corresponding Dockerfiles are to be used solely with Java applications or Java application components that are being developed for deployment on Microsoft Azure, Azure Functions (anywhere), Azure Stack, or Microsoft SQL Server and are not intended to be used for any other purpose.
 
 ## Further Information
-+ [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)
-+ [Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)
-+ [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
-+ [Java SE JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
-+ [Java SE JDK And Tomcat](https://hub.docker.com/_/microsoft-java-tomcat)
-+ [Java SE JDK And Wildfly](https://hub.docker.com/_/microsoft-java-wildfly)
+* [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)
+* [Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)
+* [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
+* [Java SE JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
+* [Java SE JDK And Tomcat](https://hub.docker.com/_/microsoft-java-tomcat)
+* [Java SE JDK And Wildfly](https://hub.docker.com/_/microsoft-java-wildfly)
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

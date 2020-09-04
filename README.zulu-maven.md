@@ -6,7 +6,7 @@ docker pull mcr.microsoft.com/java/maven:tag<br>
 docker run --rm -it mcr.microsoft.com/java/maven:tag
 
 ## Further Information
-[Java SE JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
+* [Java SE JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
 
 ## Featured Repos
 https://<span></span>repos.azul.com/azure-only/zulu/yum<br>
