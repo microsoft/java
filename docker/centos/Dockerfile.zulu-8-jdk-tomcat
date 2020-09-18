@@ -19,11 +19,13 @@ ENV PATH /usr/local/tomcat/bin:$PATH
 # Make Java 8 obey container resource limits, improve performance
 ENV JAVA_OPTS "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseG1GC -Djava.awt.headless=true"
 
+RUN yum -q -y update && \
+    yum -q -y install unzip && \
 # Install Tomcat
-RUN curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose \
-        && mkdir /usr/local/tomcat \ 
-        && tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 \
-        && rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz
+    curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose && \
+    mkdir /usr/local/tomcat && \ 
+    tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
+    rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz
        
 COPY Tomcat/${SERVER_XML} /usr/local/tomcat/conf/server.xml
 COPY Tomcat/${LOGGING_PROPERTIES} /usr/local/tomcat/conf/logging.properties
