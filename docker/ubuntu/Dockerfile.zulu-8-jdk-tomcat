@@ -7,7 +7,7 @@
 FROM mcr.microsoft.com/java/jdk:8-zulu-ubuntu
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-ARG TOMCAT_VERSION=9.0.31
+ARG TOMCAT_VERSION=9.0.37
 ARG SERVER_XML=server.xml
 ARG LOGGING_PROPERTIES=logging.properties
 ARG CATALINA_PROPERTIES=catalina.properties
