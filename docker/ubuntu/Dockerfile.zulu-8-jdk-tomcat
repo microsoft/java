@@ -21,9 +21,9 @@ ENV JAVA_OPTS "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap
 
 # Cleanup & Install
 RUN apt-get -qq update \
-        && apt-get -qq -y --no-install-recommends install curl \
+        && apt-get -qq -y --no-install-recommends install curl unzip \
         && rm -rf /var/lib/apt/lists/* \
-        # Install Tomcat
+# Install Tomcat
         && curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose \
         && mkdir /usr/local/tomcat \ 
         && tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 \
