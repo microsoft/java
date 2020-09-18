@@ -20,14 +20,14 @@ ENV PATH /usr/local/tomcat/bin:$PATH
 ENV JAVA_OPTS "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:+UseG1GC -Djava.awt.headless=true"
 
 # Cleanup & Install
-RUN apt-get -qq update \
-        && apt-get -qq -y --no-install-recommends install curl \
-        && rm -rf /var/lib/apt/lists/* \
-        # Install Tomcat
-        && curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose \
-        && mkdir /usr/local/tomcat \ 
-        && tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 \
-        && rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz
+RUN apt-get -qq update && \
+    apt-get -qq -y --no-install-recommends install curl unzip && \
+    rm -rf /var/lib/apt/lists/* && \
+# Install Tomcat
+    curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose && \
+    mkdir /usr/local/tomcat && \ 
+    tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
+    rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz
        
 COPY Tomcat/${SERVER_XML} /usr/local/tomcat/conf/server.xml
 COPY Tomcat/${LOGGING_PROPERTIES} /usr/local/tomcat/conf/logging.properties
