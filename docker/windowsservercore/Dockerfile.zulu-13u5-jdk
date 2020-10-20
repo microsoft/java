@@ -7,11 +7,11 @@
 FROM microsoft/windowsservercore:ltsc2016
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-RUN setx PACKAGE zulu-14-azure-jdk_14.29.23-14.0.2-win_x64.msi && \
-    setx PACKAGE_DIR zulu-14/14.0.2 && \
-    setx /m JAVA_HOME "C:\Program Files\Zulu\zulu-14"
+RUN setx PACKAGE zulu-13-azure-jdk_13.35.17-13.0.5-win_x64.msi && \
+    setx PACKAGE_DIR zulu-13/13.0.5 && \
+    setx /m JAVA_HOME "C:\Program Files\Zulu\zulu-13"
     
 
-RUN powershell -Command [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;(new-object System.Net.WebClient).DownloadFile('https://repos.azul.com/azure-only/zulu/packages/zulu-14/14.0.2/zulu-14-azure-jdk_14.29.23-14.0.2-win_x64.msi', 'C:\%PACKAGE%')
+RUN powershell -Command [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;(new-object System.Net.WebClient).DownloadFile('https://repos.azul.com/azure-only/zulu/packages/zulu-13/13.0.5/zulu-13-azure-jdk_13.35.17-13.0.5-win_x64.msi', 'C:\%PACKAGE%')
 RUN msiexec /quiet /i C:\%PACKAGE% && \
     del C:\%PACKAGE%
