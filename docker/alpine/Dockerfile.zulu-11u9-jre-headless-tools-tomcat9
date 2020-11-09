@@ -18,7 +18,7 @@ RUN JRE_MODULES=$(jimage list ${JRE_DIR}/lib/modules | grep "Module: " | sed -e 
     rm -rf ${JRE_DIR} && \
     jlink --no-header-files --strip-debug --module-path ${JDK_DIR}/jmods --add-modules ${JRE_MODULES} --output ${JRE_DIR}
 
-FROM alpine
+FROM alpine AS stage3
 
 ARG TOMCAT_MAJOR=9
 ARG TOMCAT_VERSION=9.0.39
