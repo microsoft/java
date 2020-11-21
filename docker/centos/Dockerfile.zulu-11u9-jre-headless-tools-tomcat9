@@ -1,0 +1,62 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM mcr.microsoft.com/java/jre-headless:11u9-zulu-centos AS stage1
+FROM mcr.microsoft.com/java/jdk:11u9-zulu-centos AS stage2
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+ARG JDK_DIR=/usr/lib/jvm/zulu-11-azure
+ARG JRE_DIR=/usr/lib/jvm/zre-hl-11-azure
+
+COPY --from=stage1 ${JRE_DIR} ${JRE_DIR}
+
+RUN JRE_MODULES=$(jimage list ${JRE_DIR}/lib/modules | grep "Module: " | sed -e "s/^Module: //" | tr '\n' ',') && \
+    JRE_MODULES=${JRE_MODULES}jdk.jcmd, && \
+    rm -rf ${JRE_DIR} && \
+    jlink --no-header-files --strip-debug --module-path ${JDK_DIR}/jmods --add-modules ${JRE_MODULES} --output ${JRE_DIR}
+
+FROM centos:latest AS stage3
+
+ARG TOMCAT_MAJOR=9
+ARG TOMCAT_VERSION=9.0.39
+ARG SERVER_XML=server.xml
+ARG LOGGING_PROPERTIES=logging.properties
+ARG CATALINA_PROPERTIES=catalina.properties
+
+COPY --from=stage2 ${JRE_DIR} ${JRE_DIR}
+RUN cd /usr/bin && find ${JRE_DIR}/bin -type f -perm -a=x -exec ln -f -s {} . \;
+
+# As provided here, only the access log gets written to this location.
+# Mount to a persistent volume to preserve access logs.
+# Modify this value to specify a different log directory.
+# e.g. /home/logs in Azure App Service
+ENV LOG_ROOT=/tomcat_logs
+
+ENV PATH /usr/local/tomcat/bin:$PATH
+
+# Make Java 11 obey container resource limits, improve performance
+ENV JAVA_OPTS "-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -Djava.awt.headless=true"
+
+RUN yum -q -y update && \
+    yum -q -y install unzip && \
+    yum -q -y upgrade && \
+# Install Tomcat
+    curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose && \
+    mkdir /usr/local/tomcat && \
+    tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
+    rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz
+       
+COPY Tomcat/v9/${SERVER_XML} /usr/local/tomcat/conf/server.xml
+COPY Tomcat/v9/${LOGGING_PROPERTIES} /usr/local/tomcat/conf/logging.properties
+COPY Tomcat/v9/${CATALINA_PROPERTIES} /usr/local/tomcat/conf/catalina.properties
+
+# Copy the startup script
+COPY Tomcat/v9/startup.sh /startup.sh
+RUN chmod a+x /startup.sh
+
+EXPOSE 80
+
+ENTRYPOINT ["/startup.sh"]
