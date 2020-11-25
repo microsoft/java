@@ -5,9 +5,8 @@ These Zulu OpenJDK for Azure Docker images and corresponding Dockerfiles are to 
 * [Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)
 * [Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)
 * [Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
-* [Java SE JDK And Maven](https://hub.docker.com/_/microsoft-java-maven)
-* [Java SE JDK And Tomcat](https://hub.docker.com/_/microsoft-java-tomcat)
-* [Java SE JDK And Wildfly](https://hub.docker.com/_/microsoft-java-wildfly)
+* [Java SE JDK And Apache Maven](https://hub.docker.com/_/microsoft-java-maven)
+* [Java SE JDK And Apache Tomcat](https://hub.docker.com/_/microsoft-java-tomcat)
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
