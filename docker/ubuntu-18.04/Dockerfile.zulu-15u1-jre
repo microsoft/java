@@ -13,7 +13,7 @@ RUN apt-get -qq update && \
     apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main" && \
     apt-get -qq update && \
     apt-get -qq -y dist-upgrade && \
-    apt-get -qq -y --no-install-recommends install zulu-15-azure-jre=15.28+13* && \
+    apt-get -qq -y --no-install-recommends install zulu-15-azure-jre=15.28+51* && \
     apt-get -qq -y purge gnupg software-properties-common && \
     apt -y autoremove && \
     rm -rf /var/lib/apt/lists/*
