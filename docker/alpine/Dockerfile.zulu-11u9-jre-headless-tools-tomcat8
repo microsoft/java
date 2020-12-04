@@ -8,8 +8,8 @@ FROM mcr.microsoft.com/java/jre-headless:11u9-zulu-alpine AS stage1
 FROM mcr.microsoft.com/java/jdk:11u9-zulu-alpine AS stage2
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-ARG JDK_DIR=/usr/lib/jvm/zulu-11-azure-jdk_11.43.21-11.0.9-linux_musl_x64
-ARG JRE_DIR=/usr/lib/jvm/zulu-11-azure-jre-headless_11.43.21-11.0.9-linux_musl_x64
+ARG JDK_DIR=/usr/lib/jvm/zulu-11-azure-jdk_11.43.55-11.0.9.1-linux_musl_x64
+ARG JRE_DIR=/usr/lib/jvm/zulu-11-azure-jre-headless_11.43.55-11.0.9.1-linux_musl_x64
 
 COPY --from=stage1 ${JRE_DIR} ${JRE_DIR}
 
