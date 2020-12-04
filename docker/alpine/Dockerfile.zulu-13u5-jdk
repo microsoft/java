@@ -11,7 +11,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-ARG ZULU_DIR=zulu-13-azure-jdk_13.35.17-13.0.5-linux_musl_x64
+ARG ZULU_DIR=zulu-13-azure-jdk_13.35.51-13.0.5.1-linux_musl_x64
 
 RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
     INSTALL_DIR=/usr/lib/jvm && \
@@ -20,7 +20,7 @@ RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
     apk --no-cache add ca-certificates libgcc libstdc++ ttf-dejavu wget && \
     apk update && \
     apk upgrade && \
-    wget -q https://repos.azul.com/azure-only/zulu/packages/zulu-13/13.0.5/zulu-13-azure-jdk_13.35.17-13.0.5-linux_musl_x64.tar.gz && \
+    wget -q https://repos.azul.com/azure-only/zulu/packages/zulu-13/13.0.5.1/zulu-13-azure-jdk_13.35.51-13.0.5.1-linux_musl_x64.tar.gz && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
     cd ${BIN_DIR} && \
