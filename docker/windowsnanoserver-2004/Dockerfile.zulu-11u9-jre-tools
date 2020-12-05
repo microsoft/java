@@ -7,9 +7,9 @@
 FROM mcr.microsoft.com/java/jdk:11u9-zulu-windowsservercore AS stage1
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-ARG PACKAGE_DIR=zulu-11/11.0.9
-ARG JRE_PACKAGE=zulu-11-azure-jre_11.43.21-11.0.9-win_x64.msi
-ARG JRE_TOOLS_DIR="C:\zulu-11-azure-jre-tools_11.43.21-11.0.9-win_x64"
+ARG PACKAGE_DIR=zulu-11/11.0.9.1
+ARG JRE_PACKAGE=zulu-11-azure-jre_11.43.55-11.0.9.1-win_x64.msi
+ARG JRE_TOOLS_DIR="C:\zulu-11-azure-jre-tools_11.43.55-11.0.9.1-win_x64"
 ARG JRE_DIR="C:\Program Files\Zulu\zulu-11-jre"
 ARG JDK_DIR="C:\Program Files\Zulu\zulu-11"
 
@@ -28,7 +28,7 @@ RUN jlink --no-header-files --strip-debug --module-path "%JDK_DIR%\jmods" --add-
 
 FROM mcr.microsoft.com/windows/nanoserver:2004
 
-ARG JRE_TOOLS_DIR="C:\zulu-11-azure-jre-tools_11.43.21-11.0.9-win_x64"
+ARG JRE_TOOLS_DIR="C:\zulu-11-azure-jre-tools_11.43.55-11.0.9.1-win_x64"
 
 USER ContainerAdministrator
 RUN setx /m JAVA_HOME "%JRE_TOOLS_DIR%" && \
