@@ -8,8 +8,8 @@ FROM mcr.microsoft.com/java/jdk:8u282-zulu-alpine AS stage1
 FROM mcr.microsoft.com/java/jre-headless:8u282-zulu-alpine
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-ARG JDK_DIR=/usr/lib/jvm/zulu-8-azure-jdk_8.52.0.24-8.0.282-linux_musl_x64
-ARG JRE_DIR=/usr/lib/jvm/zulu-8-azure-jre-headless_8.52.0.24-8.0.282-linux_musl_x64
+ARG JDK_DIR=/usr/lib/jvm/zulu-8-azure-jdk_8.52.0.23-8.0.282-linux_musl_x64
+ARG JRE_DIR=/usr/lib/jvm/zulu-8-azure-jre-headless_8.52.0.23-8.0.282-linux_musl_x64
 
 ARG TOMCAT_MAJOR=9
 ARG TOMCAT_VERSION=9.0.39
