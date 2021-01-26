@@ -20,7 +20,7 @@ RUN ZULU_PACK=${ZULU_DIR}.tar.gz && \
     apk --no-cache add ca-certificates libgcc libstdc++ ttf-dejavu wget && \
     apk update && \
     apk upgrade && \
-    wget -q https://repos.azul.com/azure-only/zulu/packages/zulu-13/13.0.6/zulu-13-azure-jre-headless-tools_13.37.21-13.0.6-linux_musl_x64.tar.gz && \
+    wget -q https://repos.azul.com/azure-only/zulu/packages/zulu-13/13.0.6/${ZULU_PACK} && \
     mkdir -p ${INSTALL_DIR} && \
     tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR} && rm -f ${ZULU_PACK} && \
     cd ${BIN_DIR} && \
