@@ -21,7 +21,7 @@ RUN JRE_MODULES=$(jimage list ${JRE_DIR}/lib/modules | grep "Module: " | sed -e 
 FROM ubuntu:focal AS stage3
 
 ARG TOMCAT_MAJOR=8
-ARG TOMCAT_VERSION=8.5.59
+ARG TOMCAT_VERSION=8.5.63
 ARG SERVER_XML=server.xml
 ARG LOGGING_PROPERTIES=logging.properties
 ARG CATALINA_PROPERTIES=catalina.properties
@@ -46,7 +46,7 @@ RUN apt-get -qq update && \
 # Install Tomcat
     curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose && \
     mkdir /usr/local/tomcat && \
-    tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
+    tar zxf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
     rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz && \
     apt-get -qq -y dist-upgrade && \
     apt-get -qq -y purge curl && \
