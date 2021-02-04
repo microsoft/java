@@ -12,7 +12,7 @@ ARG JDK_DIR=/usr/lib/jvm/zulu-8-azure-jdk_8.52.0.23-8.0.282-linux_musl_x64
 ARG JRE_DIR=/usr/lib/jvm/zulu-8-azure-jre-headless_8.52.0.23-8.0.282-linux_musl_x64
 
 ARG TOMCAT_MAJOR=8
-ARG TOMCAT_VERSION=8.5.59
+ARG TOMCAT_VERSION=8.5.63
 ARG SERVER_XML=server.xml
 ARG LOGGING_PROPERTIES=logging.properties
 ARG CATALINA_PROPERTIES=catalina.properties
@@ -51,7 +51,7 @@ RUN apk add --update openssh-server bash openrc && \
     # Install Tomcat
     wget -O /tmp/apache-tomcat-${TOMCAT_VERSION}.tar.gz https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose && \
     mkdir /usr/local/tomcat && \
-    tar xvzf /tmp/apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
+    tar zxf /tmp/apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
     rm -f /tmp/apache-tomcat-${TOMCAT_VERSION}.tar.gz
 
 COPY Tomcat/v8/${SERVER_XML} /usr/local/tomcat/conf/server.xml
