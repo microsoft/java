@@ -12,7 +12,7 @@ ARG JDK_DIR=/usr/lib/jvm/zulu-8-azure
 ARG JRE_DIR=/usr/lib/jvm/zre-hl-8-azure
 
 ARG TOMCAT_MAJOR=8
-ARG TOMCAT_VERSION=8.5.59
+ARG TOMCAT_VERSION=8.5.63
 ARG SERVER_XML=server.xml
 ARG LOGGING_PROPERTIES=logging.properties
 ARG CATALINA_PROPERTIES=catalina.properties
@@ -41,7 +41,7 @@ RUN yum -q -y update && \
 # Install Tomcat
     curl -O https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz --no-verbose && \
     mkdir /usr/local/tomcat && \
-    tar xvzf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
+    tar zxf apache-tomcat-${TOMCAT_VERSION}.tar.gz -C /usr/local/tomcat --strip-components 1 && \
     rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz
        
 COPY Tomcat/v8/${SERVER_XML} /usr/local/tomcat/conf/server.xml
