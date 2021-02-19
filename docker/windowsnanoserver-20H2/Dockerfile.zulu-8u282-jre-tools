@@ -4,15 +4,15 @@
 # that are being developed for deployment on Microsoft Azure or Azure Stack,
 # and are not intended to be used for any other purpose.
 
-FROM mcr.microsoft.com/java/jdk:7u292-zulu-windowsservercore AS stage1
+FROM mcr.microsoft.com/java/jdk:8u282-zulu-windowsservercore AS stage1
 FROM mcr.microsoft.com/windows/nanoserver:20H2
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
-ARG PACKAGE_DIR=zulu-7/7u292
-ARG JRE_TOOLS_DIR=zulu-7-azure-jre-tools_7.44.0.11-7.0.292-win_x64
-ARG JRE_DIR=zulu-7-azure-jre_7.44.0.11-7.0.292-win_x64
+ARG PACKAGE_DIR=zulu-8/8u282
+ARG JRE_TOOLS_DIR=zulu-8-azure-jre-tools_8.52.0.23-8.0.282-win_x64
+ARG JRE_DIR=zulu-8-azure-jre_8.52.0.23-8.0.282-win_x64
 ARG JRE_PACKAGE=$JRE_DIR.zip
-ARG JDK_DIR="C:\Program Files\Zulu\zulu-7"
+ARG JDK_DIR="C:\Program Files\Zulu\zulu-8"
 
 USER ContainerAdministrator
 RUN setx /m JAVA_HOME "C:\%JRE_TOOLS_DIR%" && \
