@@ -45,7 +45,7 @@ RUN apt-get -qq update && \
     rm -f apache-tomcat-${TOMCAT_VERSION}.tar.gz && \
     apt-get -qq -y dist-upgrade && \
     apt-get -qq -y purge curl && \
-    apt -y autoremove && \
+    apt -y autoremove --purge && \
     rm -rf /var/lib/apt/lists/*
 
 COPY Tomcat/v9/${SERVER_XML} /usr/local/tomcat/conf/server.xml

@@ -15,7 +15,7 @@ RUN apt-get -qq update && \
     apt-get -qq -y dist-upgrade && \
     apt-get -qq -y --no-install-recommends install zulu-8-azure-jre=8.52.0.23* && \
     apt-get -qq -y purge gnupg software-properties-common && \
-    apt -y autoremove && \
+    apt -y autoremove --purge && \
     rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_HOME=/usr/lib/jvm/zre-8-azure-amd64
