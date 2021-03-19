@@ -15,7 +15,7 @@ RUN apt-get -qq update && \
     apt-get -qq -y dist-upgrade && \
     apt-get -qq -y --no-install-recommends install zulu-11-azure-jdk=11.43+55* && \
     apt-get -qq -y purge gnupg software-properties-common && \
-    apt -y autoremove && \
+    apt -y autoremove --purge && \
     rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_HOME=/usr/lib/jvm/zulu-11-azure-amd64
