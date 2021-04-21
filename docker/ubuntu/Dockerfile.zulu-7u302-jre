@@ -4,7 +4,7 @@
 # that are being developed for deployment on Microsoft Azure or Azure Stack,
 # and are not intended to be used for any other purpose.
 
-FROM debian:buster
+FROM ubuntu:focal
 MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
 
 RUN apt-get -qq update && \
@@ -13,9 +13,9 @@ RUN apt-get -qq update && \
     apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main" && \
     apt-get -qq update && \
     apt-get -qq -y dist-upgrade && \
-    apt-get -qq -y --no-install-recommends install zulu-16-azure-jre=16.28+11* && \
+    apt-get -qq -y --no-install-recommends install zulu-7-azure-jre=7.46.0.11* && \
     apt-get -qq -y purge gnupg software-properties-common && \
     apt -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_HOME=/usr/lib/jvm/zre-16-azure-amd64
+ENV JAVA_HOME=/usr/lib/jvm/zre-7-azure-amd64
