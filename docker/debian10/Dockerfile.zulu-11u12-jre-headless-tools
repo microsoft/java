@@ -1,0 +1,31 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM mcr.microsoft.com/java/jre-headless:11u12-zulu-debian10 AS stage1
+FROM mcr.microsoft.com/java/jdk:11u12-zulu-debian10 AS stage2
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+ARG INSTALL_DIR=/usr/lib/jvm
+ARG JDK_DIR=${INSTALL_DIR}/zulu-11-azure-amd64
+ARG JRE_DIR=${INSTALL_DIR}/zre-hl-11-azure-amd64
+
+COPY --from=stage1 ${JRE_DIR} ${JRE_DIR}
+
+RUN JRE_TOOLS_DIR=${INSTALL_DIR}/zre-hl-tools-11-azure-amd64 && \
+    JRE_MODULES=$(jimage list ${JRE_DIR}/lib/modules | grep "Module: " | sed -e "s/^Module: //" | tr '\n' ',') && \
+    JRE_MODULES=${JRE_MODULES}jdk.jcmd, && \
+    jlink --no-header-files --strip-debug --module-path ${JDK_DIR}/jmods --add-modules ${JRE_MODULES} --output ${JRE_TOOLS_DIR}
+
+FROM debian:buster
+ARG JRE_TOOLS_DIR=/usr/lib/jvm/zre-hl-tools-11-azure-amd64
+COPY --from=stage2 ${JRE_TOOLS_DIR} ${JRE_TOOLS_DIR}
+
+RUN cd /usr/bin && find ${JRE_TOOLS_DIR}/bin -type f -perm -a=x -exec ln -s {} . \; && \
+    apt-get -qq update && \
+    apt-get -qq -y dist-upgrade && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=${JRE_TOOLS_DIR}

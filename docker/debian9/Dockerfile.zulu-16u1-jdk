@@ -1,0 +1,21 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM debian:stretch
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+RUN apt-get -qq update && \
+    apt-get -qq -y --no-install-recommends install dirmngr gnupg software-properties-common && \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x219BD9C9 && \
+    apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main" && \
+    apt-get -qq update && \
+    apt-get -qq -y dist-upgrade && \
+    apt-get -qq -y --no-install-recommends install zulu-16-azure-jdk=16.30+15* && \
+    apt-get -qq -y purge gnupg software-properties-common && \
+    apt -y autoremove && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/zulu-16-azure-amd64

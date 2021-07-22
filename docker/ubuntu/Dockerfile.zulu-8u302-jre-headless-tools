@@ -1,0 +1,23 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM mcr.microsoft.com/java/jdk:8u302-zulu-ubuntu AS stage1
+FROM mcr.microsoft.com/java/jre-headless:8u302-zulu-ubuntu
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+ARG INSTALL_DIR=/usr/lib/jvm
+ARG JDK_DIR=${INSTALL_DIR}/zulu-8-azure-amd64
+ARG JRE_DIR=${INSTALL_DIR}/zre-hl-8-azure-amd64
+
+COPY --from=stage1 ${JDK_DIR}/bin/jcmd ${JRE_DIR}/bin
+COPY --from=stage1 ${JDK_DIR}/bin/jmap ${JRE_DIR}/bin
+COPY --from=stage1 ${JDK_DIR}/bin/jstack ${JRE_DIR}/bin
+COPY --from=stage1 ${JDK_DIR}/lib/tools.jar ${JRE_DIR}/lib
+COPY --from=stage1 ${JDK_DIR}/jre/lib/amd64/libattach.so ${JRE_DIR}/lib/amd64
+
+RUN cd /usr/bin && find ${JRE_DIR}/bin -type f -perm -a=x -exec ln -s {} . \;
+
+ENV JAVA_HOME=${JRE_DIR}
