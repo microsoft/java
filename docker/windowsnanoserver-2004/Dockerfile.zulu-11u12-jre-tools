@@ -1,0 +1,38 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM mcr.microsoft.com/java/jdk:11u12-zulu-windowsservercore AS stage1
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+ARG PACKAGE_DIR=zulu-11/11.0.12
+ARG JRE_PACKAGE=zulu-11-azure-jre_11.50.19-11.0.12-win_x64.msi
+ARG JRE_DIR="C:\Program Files\Zulu\zulu-11-jre"
+ARG JRE_TOOLS_DIR=C:\zulu-11-azure-jre-tools_11.50.19-11.0.12-win_x64
+ARG JDK_DIR="C:\Program Files\Zulu\zulu-11"
+
+RUN powershell -Command [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;(new-object System.Net.WebClient).DownloadFile('https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.12/zulu-11-azure-jre_11.50.19-11.0.12-win_x64.msi', '%JRE_PACKAGE%') && \
+    msiexec /quiet /i %JRE_PACKAGE% && \
+    del %JRE_PACKAGE%
+
+RUN jimage.exe list "%JRE_DIR%\lib\modules" | findstr "Module: " > modules.out && \
+    powershell -Command "(Get-Content modules.out) -replace 'Module: ', '' | Out-File modules.out" && \
+    powershell -Command "(Get-Content modules.out) -join ',' | Out-File modules.out" && \
+    powershell -Command "(Get-Content modules.out) + ',jdk.jcmd' | Out-File modules.out" && \
+    for /f %P in ('type modules.out') do setx /m JRE_MODULES %P && \
+    del modules.out
+
+RUN jlink --no-header-files --strip-debug --module-path "%JDK_DIR%\jmods" --add-modules %JRE_MODULES% --output %JRE_TOOLS_DIR%
+
+FROM mcr.microsoft.com/windows/nanoserver:2004
+
+ARG JRE_TOOLS_DIR="C:\zulu-11-azure-jre-tools_11.50.19-11.0.12-win_x64"
+
+USER ContainerAdministrator
+RUN setx /m JAVA_HOME "%JRE_TOOLS_DIR%" && \
+    setx /m PATH "%PATH%;%JAVA_HOME%\bin"
+
+COPY --from=stage1 ${JRE_TOOLS_DIR} ${JRE_TOOLS_DIR}
+USER ContainerUser

@@ -1,0 +1,31 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM mcr.microsoft.com/java/jdk:8u302-zulu-windowsservercore AS stage1
+FROM mcr.microsoft.com/windows/nanoserver:2004
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+ARG PACKAGE_DIR=zulu-8/8u302
+ARG JRE_PACKAGE=zulu-8-azure-jre_8.56.0.21-8.0.302-win_x64.zip
+ARG JRE_DIR=zulu-8-azure-jre_8.56.0.21-8.0.302-win_x64
+ARG JRE_TOOLS_DIR=zulu-8-azure-jre-tools_8.56.0.21-8.0.302-win_x64
+ARG JDK_DIR="C:\Program Files\Zulu\zulu-8"
+
+USER ContainerAdministrator
+RUN setx /m JAVA_HOME "C:\%JRE_TOOLS_DIR%" && \
+    setx /m PATH "%PATH%;%JAVA_HOME%\bin"
+
+RUN curl https://repos.azul.com/azure-only/zulu/packages/%PACKAGE_DIR%/%JRE_PACKAGE% -o %JRE_PACKAGE% && \
+    tar -xf %JRE_PACKAGE% && \
+    del %JRE_PACKAGE% && \
+    move %JRE_DIR% %JRE_TOOLS_DIR%
+
+COPY --from=stage1 ${JDK_DIR}/bin/jstack.exe ${JRE_TOOLS_DIR}/bin
+COPY --from=stage1 ${JDK_DIR}/bin/jmap.exe ${JRE_TOOLS_DIR}/bin
+COPY --from=stage1 ${JDK_DIR}/bin/jcmd.exe ${JRE_TOOLS_DIR}/bin
+COPY --from=stage1 ${JDK_DIR}/lib/tools.jar ${JRE_TOOLS_DIR}/lib
+COPY --from=stage1 ${JDK_DIR}/jre/bin/attach.dll ${JRE_TOOLS_DIR}/bin
+USER ContainerUser
