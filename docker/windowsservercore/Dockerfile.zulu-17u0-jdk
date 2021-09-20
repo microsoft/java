@@ -1,0 +1,17 @@
+
+# This Zulu OpenJDK Dockerfile and corresponding Docker image are
+# to be used solely with Java applications or Java application components
+# that are being developed for deployment on Microsoft Azure or Azure Stack,
+# and are not intended to be used for any other purpose.
+
+FROM mcr.microsoft.com/windows/servercore:ltsc2016
+MAINTAINER Zulu Enterprise Container Images <azul-zulu-images@microsoft.com>
+
+RUN setx PACKAGE zulu-17-azure-jdk_17.28.13-17.0.0-win_x64.msi && \
+    setx PACKAGE_DIR zulu-17/17.0.0 && \
+    setx /m JAVA_HOME "C:\Program Files\Zulu\zulu-17"
+    
+
+RUN powershell -Command [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;(new-object System.Net.WebClient).DownloadFile('https://repos.azul.com/azure-only/zulu/packages/zulu-17/17/zulu-17-azure-jdk_17.28.13-17.0.0-win_x64.msi', 'C:\%PACKAGE%')
+RUN msiexec /quiet /i C:\%PACKAGE% && \
+    del C:\%PACKAGE%
