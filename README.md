@@ -20,7 +20,7 @@ These Zulu OpenJDK for Azure Docker images and corresponding Dockerfiles are to 
 * [Zulu for Azure JRE](https://hub.docker.com/_/microsoft-java-jre)
 * [Zulu for Azure Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
 * [Zulu for Azure JDK with Apache Maven](https://hub.docker.com/_/microsoft-java-maven)
-* [Zulu for Azure JDK with Apache Tomcat](https://hub.docker.com/_/microsoft-java-tomcat)
+* [Zulu for Azure JRE with Apache Tomcat](https://hub.docker.com/_/microsoft-java-tomcat)
 
 ## Contributing
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
