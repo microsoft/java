@@ -1,4 +1,18 @@
-## About
+# End of Updates
+
+As [previously announced](https://devblogs.microsoft.com/java/end-of-updates-support-and-availability-of-zulu-for-azure/) on June 30th 2021, Zulu for Azure binaries are no longer receiving updates or support since January 1st, 2022. Container images are no longer updated. Microsoft products and services are transitioning to [Microsoft Build of OpenJDK](https://docs.microsoft.com/en-us/java/openjdk/install) for JDK 11 and later, and [Eclipse Temurin](https://adoptium.net/releases.html?variant=openjdk8&jvmVariant=hotspot) for JDK 8.
+
+For up to date container images with Microsoft supported builds of OpenJDK, please visit [Container Images for Microsoft Build of OpenJDK](https://docs.microsoft.com/en-us/java/openjdk/containers).
+
+For more information on OpenJDK support on Microsoft Azure, please visit [Java support on Azure and Azure Stack](https://docs.microsoft.com/en-us/azure/developer/java/fundamentals/java-support-on-azure).
+
+## Availability of existing images and migration
+
+Starting **July 1st, 2022**, Zulu for Azure binaries _may no longer be available_ from Azul Zulu for Azure repositories. Docker images _may no longer be available_ on Docker Hub or in the Microsoft Container Registry.
+
+For information on migration to other similar images, please [read the announcement](https://devblogs.microsoft.com/java/end-of-updates-support-and-availability-of-zulu-for-azure/#container-images-availability-timeline).
+
+# About
 These Zulu OpenJDK for Azure Docker images and corresponding Dockerfiles are to be used solely with Java applications or Java application components that are being developed for deployment on Microsoft Azure, Azure Functions (anywhere), Azure Stack, or Microsoft SQL Server and are not intended to be used for any other purpose.
 
 ## Further Information
